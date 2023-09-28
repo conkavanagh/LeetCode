@@ -5,7 +5,7 @@ class Solution {
         int index = 0;
         for(int i=0; i<n;i++)
         {
-            if(nums[i]%2 == 0)
+            if((nums[i]& 0x1) == 0) //Bitmask
             {
                 sortedArray[index] = nums[i];
                 index++;
@@ -13,7 +13,7 @@ class Solution {
         }
         for(int i=0; i<n;i++)
         {
-            if(nums[i]%2 != 0)
+            if((nums[i]& 0x1) != 0)
             {
                 sortedArray[index] = nums[i];
                 index++;
