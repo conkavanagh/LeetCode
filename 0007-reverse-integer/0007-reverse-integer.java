@@ -1,28 +1,18 @@
 class Solution {
     public int reverse(int x) {
-        String num = "";
-        boolean negative = false;
-        if (x<0){
-            x = x*-1;
-            negative = true;
-        }
-        while (x > 0) {
-            num = num+(x % 10);
-            x = x / 10;
-        }
-        if (num == ""){
-            num = "0";
-        }
-        try{
-            if(negative){
-                int y = Integer.parseInt(num);
-                return -1*y;
+        StringBuilder s = new StringBuilder();
+        s.append(Math.abs(x));
+        s.reverse();
+        if (s.length() >= 10 ){
+            int c1 = Integer.parseInt(s.substring(0 , 5) );
+            int c2 = Integer.parseInt(s.substring(5 , 10) );
+            if (c1 > 21474 || c2 > 83647){
+                return 0;
             }
-            return Integer.parseInt(num);
         }
-        catch(NumberFormatException e){
-            return 0;
-        }
+
+       int num = Integer.parseInt(s.toString());
         
+        return (x < 0) ? -num : num ;
     }
 }
