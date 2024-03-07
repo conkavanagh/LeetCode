@@ -1,12 +1,11 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        // Sort then return when nums[n] != n
-        Arrays.sort(nums);
-        for(int i=0; i<nums.length; i++)
-        {
-            if(nums[i] != i) return i;
-        }
-        // If none are not equal then we're missing the next number on
-        return nums.length;
+        // Expected total of n+1 minus the total of nums
+        int n = nums.length;
+        int expectedTotal = n*(n+1)/2;
+        int runningTotal = 0;
+        for(int i : nums) runningTotal +=i;
+
+        return expectedTotal - runningTotal;
     }
 }
