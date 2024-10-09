@@ -11,7 +11,6 @@ class Solution {
                 }
             }
         }
-        toChange+=stack.size();
-        return toChange;
+        return toChange+=stack.size();
     }
 }
