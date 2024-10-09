@@ -11,10 +11,7 @@ class Solution {
                 }
             }
         }
-        while(!stack.isEmpty()){
-            stack.pop();
-            toChange++;
-        }
+        toChange+=stack.size();
         return toChange;
     }
 }
