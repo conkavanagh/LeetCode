@@ -6,7 +6,6 @@ class Solution {
             if(s.charAt(i) == '0') count++;
             else{
                 total+=count;
-                //count = 0;
             }
         }
         return total;
